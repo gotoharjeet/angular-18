@@ -1,1 +1,57 @@
-<p>structural-directive works!</p>
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Structural Directives</h1>
+    <p>*ngif, *ngFor....</p>
+</div>
+<div class="row pt-3">
+    <div class="col-3" >
+        <div class="bg-danger p-3 text-center" *ngIf="isDiv1Visible">
+            <h4>Div-1</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-danger p-3 text-center"  *ngIf="idDiv1Visible">
+            <h4>Div-2</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-danger p-3 text-center" *ngif="number1 == number2">
+            <h4>Div-3</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="bg-danger p-3 text-center" >
+            <h4>Div-4</h4>
+        </div>
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="showDiv1(false)">Hide</button>
+        <button class="btn btn-primary mx-2" (click)="showDiv1(true)" >Show</button>
+    </div>
+    
+    <div class="col-3 text-center">
+        <button class="btn btn-success" (click)="toggleDiv1()">Toggle</button>
+    </div>
+
+    <div class="col-3 text-center">
+        <div style="display: flex;align-items: center">
+            <input class="form-control" type="text" [(ngModel)]="number1" placeholder="Num-1">
+            <input class="form-control" type="text" [(ngModel)]="number2" placeholder="Num-2">
+        </div>
+    </div>
+    
+    <div class="col-3 text-center">
+        <div style="display: flex;align-items: center">
+        <input type="checkbox" class="width-50" >
+            <select>
+                <option value="">Select State</option>
+                <option value="option-1">Delhi</option>
+                <option value="option-2">Goa</option>
+                <option value="option-3">Punjab</option>
+            </select>
+        </div>
+        
+    </div>
+</div>
+
