@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-databinding',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './databinding.component.html',
   styleUrl: './databinding.component.css'
 })
 export class DatabindingComponent {
 
+
   courseName:string="Angular18";
-  inputType="checkbox";
+  inputType="radio";
   rollNo:number=123;
 
   isIndian:boolean=false;
@@ -19,4 +21,19 @@ export class DatabindingComponent {
   {
     
   }
+
+  showAlert(arg0: string) {
+    
+    if(!arg0)
+    {
+      throw new Error('Method not implemented.');
+    }
+    alert(arg0); 
+  }
+  
+  changeCourseName():void
+  {
+    this.courseName="React Ji";
+  }
+  
 }

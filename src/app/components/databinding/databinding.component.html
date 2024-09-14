@@ -15,16 +15,24 @@
     <div class="col-4">
         {{currentDate}}
     </div>
+    <select [(ngModel)]="courseName">
+        <option>Angular 18</option>
+        <option>React Ji</option>
+        <option>Angular 16</option>
+    </select>
 </div>
 
 <div class="row">
-    <div class="col-4">
-        
+    <div class="col-6">
+        <input [type]="inputType">
+        <input type="text" value="{{courseName}}" placeholder="">
+
     </div>
-    <div class="col-4">
-        
+    <div class="col-6" >
+        <button class="btn btn-success"  (click)="showAlert('Welcome to Angular 18')">Show Welcome</button>
+        <input type="text" [(ngModel)]="courseName">{{courseName}}
     </div>
-    <div class="col-4">
-        
+    <div class="col-6">
+        <button class="btn btn-success" (click)="changeCourseName()">Change Course Name</button>
     </div>
 </div>
