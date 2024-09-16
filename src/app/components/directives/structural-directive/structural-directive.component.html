@@ -3,23 +3,35 @@
     <p>*ngif, *ngFor....</p>
 </div>
 <div class="row pt-3">
-    <div class="col-3" >
+    <div class="col-3">
         <div class="bg-danger p-3 text-center" *ngIf="isDiv1Visible">
             <h4>Div-1</h4>
         </div>
     </div>
     <div class="col-3">
-        <div class="bg-danger p-3 text-center"  *ngIf="idDiv1Visible">
+        <div class="bg-danger p-3 text-center" *ngIf="idDiv1Visible">
             <h4>Div-2</h4>
         </div>
     </div>
+    <!-- <div class="col-3">
+        <div *ngif="number1 == number2 as isNumsSame" class="bg-danger p-3 text-center" >
+            <h4>Div-3:{{isNumsSame}}</h4>
+        </div>
+    </div> -->
+
     <div class="col-3">
-        <div class="bg-danger p-3 text-center" *ngif="number1 == number2">
+        <div *ngIf="(number1 == number2) as isNumsSame" class="bg-danger p-3 text-center">
             <h4>Div-3</h4>
+            <!-- <p>The condition isEqual: {{ isNumsSame }}</p> -->
         </div>
     </div>
+    <!-- <div class="col-3">
+        <div class="bg-danger p-3 text-center" *ngIf="isCheckedBox">
+            <h4>Div-4</h4>
+        </div>
+    </div> -->
     <div class="col-3">
-        <div class="bg-danger p-3 text-center" >
+        <div class="bg-danger p-3 text-center" *ngIf="selectedState == 'Punjab'">
             <h4>Div-4</h4>
         </div>
     </div>
@@ -27,31 +39,113 @@
 <div class="row pt-3">
     <div class="col-3 text-center">
         <button class="btn btn-danger" (click)="showDiv1(false)">Hide</button>
-        <button class="btn btn-primary mx-2" (click)="showDiv1(true)" >Show</button>
+        <button class="btn btn-primary mx-2" (click)="showDiv1(true)">Show</button>
     </div>
-    
+
     <div class="col-3 text-center">
         <button class="btn btn-success" (click)="toggleDiv1()">Toggle</button>
     </div>
 
-    <div class="col-3 text-center">
+    <!-- <div class="col-3 text-center">
         <div style="display: flex;align-items: center">
             <input class="form-control" type="text" [(ngModel)]="number1" placeholder="Num-1">
             <input class="form-control" type="text" [(ngModel)]="number2" placeholder="Num-2">
         </div>
+    </div> -->
+    <div class="col-3 text-center">
+        <div style="display: flex; align-items: center">
+            <input class="form-control" type="text" [(ngModel)]="number1" placeholder="Num-1">
+            <input class="form-control" type="text" [(ngModel)]="number2" placeholder="Num-2">
+        </div>
     </div>
-    
+
+
     <div class="col-3 text-center">
         <div style="display: flex;align-items: center">
-        <input type="checkbox" class="width-50" >
-            <select>
+            <input type="checkbox" class="width-50" [(ngModel)]="isCheckedBox">
+            <select [(ngModel)]="selectedState">
                 <option value="">Select State</option>
-                <option value="option-1">Delhi</option>
-                <option value="option-2">Goa</option>
-                <option value="option-3">Punjab</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Goa">Goa</option>
+                <option value="Punjab">Punjab</option>
             </select>
         </div>
         
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-3">
+        <ul>
+            <thead>
+                <tr>
+                    <th>City Name</th>
+                </tr>
+            </thead>
+            <li *ngFor="let city of cityArray">{{city}}</li>
+        </ul>
+    </div>
+<!-- use of *ngFor in div element  -->
+
+    <div class="col-3">
+        <div *ngFor="let city of cityArray">{{city}}</div>
+    </div> 
+ <!-- use of *ngfor in dropdown -->
+    <div class="col-3">
+        <select>
+            <option value="Select">Select</option>
+            <option *ngFor="let city of cityArray">{{city}}</option>
+        </select>
+    </div>
+    <!-- use of *ngfor for display an object's key and value in table element -->
+    
+</div>
+<!-- Static value of thead is possible by creating the loop of an array of StudentKeys 
+    which has been extracted calling the getStudentKeys() - As Object StudentObj has key and pair value 
+    of each record and the key value is extracted and added to the 'Keys' a local variable and further converted
+    this into an array and returned to the loop 
+    -->
+<!-- <div class="row">
+    <div class="col-3">
+        <table class="table table-borderd">
+           <thead>
+            <tr >
+                <th *ngFor="let skey of getStudentKeys()">{{skey | titlecase}}</th>
+            </tr>
+           </thead> 
+           <tbody>
+            //As getStudentKeys() provides an array of studentkey, using this studentkey(skey) as an index 
+            of an each element of array, each student detail is interpolated and responded on browser
+            <tr *ngFor="let student of studentObj">
+                <th *ngFor="let skey of getStudentKeys()">{{student[skey]}}</th>
+            </tr>
+           </tbody>
+            
+        </table>
+    </div>
+</div> -->
+<div class="row">
+    <div class="col-3">
+        <table class="table table-borderd">
+           <thead>
+            <tr >
+                <th>S.No</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Status</th>
+            </tr>
+           </thead> 
+           <tbody>
+            <tr *ngFor="let student of studentObj;let sno=index">
+                <td>{{sno+1}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.city}}</td>
+                <td>{{student.isActive ? 'Activate' : 'DeActivate' }}</td>
+            </tr>
+           </tbody>
+            
+        </table>
     </div>
 </div>
 

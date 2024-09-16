@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-6 pt-4 text-center">{{changeCourseName}}</div>
+    <div class="col-6 m-4 bs-warrning"><input type="{{inputType}}" [value]="changeCourseName" placeholder="" class="bs-warrning">
+        <button   type="button" (click)="showAlert('Welcome')">Show Alert</button>
+    </div>
+    <div class="col-6"><input type="{{inputType}}" [(ngModel)]="changeCourseName
+    " [value]="changeCourseName" placeholder=""></div>
+
+
+    
+</div>
+<div >This is a Bootstrap alert.</div>
