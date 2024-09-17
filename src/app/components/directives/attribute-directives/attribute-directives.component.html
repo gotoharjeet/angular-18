@@ -5,12 +5,12 @@
 
 <div class="row pt-3">
     <div class="col-3">
-        <div class="bg-danger text-dark p-3 text-center">
+        <div [ngClass]="isDiv1Color ? 'bg-danger' : 'bg-primary'" class="text-dark p-3 text-center">
             <h4>Div1</h4>
         </div>
     </div>
     <div class="col-3">
-        <div class="bg-success text-dark  p-3 text-center">
+        <div [ngClass]="isDiv2Color ? 'bg-success' : 'bg-primary'" class="text-dark  p-3 text-center">
             <h4>Div2</h4>
         </div>
     </div>
@@ -27,12 +27,12 @@
 </div>
 <div class="row pt-3">
     <div class="col-3 text-center">
-        <button type="button" class="btn btn-danger ">Add Red</button>
-        <button type="button" class="btn btn-primary mx-2">Add Blue</button>
+        <button type="button" class="btn btn-danger " (click)="changeDiv1Color(true)">Add Red</button>
+        <button type="button" class="btn btn-primary mx-2" (click)="changeDiv1Color(false)">Add Blue</button>
     </div>
 
     <div class="col-3 text-center">
-        <button type="button" class="btn btn-success mx-2">Toggle</button>     
+        <button type="button" class="btn btn-success mx-2" (click)="changeDiv2Color()">Toggle</button>     
     </div>
     <div class="col-3 text-center">
         <div style="display:flex; align-items:center">
@@ -62,5 +62,8 @@
                 </tr>
             </thead>
         </table>
+    </div>
+    <div class="col-3 text-center">
+        <input type="text" [(ngModel)]="searchText">
     </div>
 </div>

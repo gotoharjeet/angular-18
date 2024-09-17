@@ -5,11 +5,12 @@ import { EmployeeListComponent } from "./components/employee-list/employee-list.
 import { DatabindingComponent } from "./components/databinding/databinding.component";
 
 import { AttributeDirectivesComponent } from './components/directives/attribute-directives/attribute-directives.component';
+import { SearchComponent } from "./components/directives/attribute-directives/search/search.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,AttributeDirectivesComponent ],
+  imports: [EmployeeListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
