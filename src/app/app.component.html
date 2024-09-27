@@ -1,1 +1,28 @@
-<app-employee-list></app-employee-list>
+<!-- <h1>{{title}} AppComp</h1>
+<app-post-list [postTitle]="title"></app-post-list> -->
+<!-- <h1>{{childMessage}} AppComp</h1> -->
+<!-- <app-post-list>
+    <p>This is card is being loaded from the ng-content</p>
+</app-post-list>
+<app-card>
+    <p>This card is being load from NG-CONTENT</p>
+    <h1>Hello World</h1>
+</app-card> -->
+
+<!-- <h1>Mult-Slot-Content-Projection</h1>
+<app-card>
+    <div card-header>UserName</div>
+    <div card-body>Joe Dive</div>
+    <div card-footer><button type="submit">Guest Profile</button></div>
+</app-card> -->
+<!-- Select the component  -->
+<!-- <div>
+    <label for="components">Choose a component to load: </label>
+    <select id="components" (change)="onChangeComp($event)">
+        <option *ngFor="let comp of components" [value]=comp.component>{{comp.name}}</option>
+    </select>    
+</div>
+
+<ng-container *ngComponentOutlet="currentComponent"></ng-container> -->
+
+<div *ngComponentOutlet="loadComponent()"></div>

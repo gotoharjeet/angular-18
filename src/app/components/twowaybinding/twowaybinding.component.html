@@ -1,0 +1,27 @@
+<h4>Example-1: Two way data binding using template variable </h4>
+
+<p>{{userName}}</p>
+<input type="text" [value]="userName" #username (keyup.enter)="UpdateUserName(username)">
+
+<h4>Example-2: Two way data binding using template variable </h4>
+<input type="text" #nameInput [ngModel]="name">
+
+<h4>{{name}}</h4>
+<button (click)="nameInput.value='Default Name'">Reset name</button>
+
+<h4>One Way Data binding</h4>
+<input type="text" [value]="name" (keyup.enter)="keyFiltering()">
+
+<h4>Example-3: Two way data binding using ngModel </h4>
+<input type="text" [(ngModel)]="name" (keyup.enter)="keyFiltering()">
+
+<h4>Use of Angular pipe within string interpolation</h4>
+<h1>{{ 2147483647.89 | number }}</h1>
+<h1>{{ 0.7 | percent }}</h1>
+<h1>{{ 0.7 | currency:'INR':'symbol' }}</h1>
+<h1>{{ today | date}}</h1>
+
+
+
+
+

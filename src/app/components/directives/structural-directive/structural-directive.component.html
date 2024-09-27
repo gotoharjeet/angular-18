@@ -1,50 +1,50 @@
-<div class="mt-2 p-2 bg-secondary text-white rounded">
+<!-- <div class="mt-2 p-2 bg-secondary text-white rounded">
     <h1>Structural Directives</h1>
     <p>*ngif, *ngFor....</p>
-</div>
-<div class="row pt-3">
-    <div class="col-3">
+</div> -->
+<!-- <div class="row pt-3"> -->
+    <!-- <div class="col-3">
         <div class="bg-danger p-3 text-center" *ngIf="isDiv1Visible">
             <h4>Div-1</h4>
         </div>
-    </div>
-    <div class="col-3">
+    </div> -->
+    <!-- <div class="col-3">
         <div class="bg-danger p-3 text-center" *ngIf="idDiv1Visible">
             <h4>Div-2</h4>
         </div>
-    </div>
+    </div> -->
     <!-- <div class="col-3">
         <div *ngif="number1 == number2 as isNumsSame" class="bg-danger p-3 text-center" >
             <h4>Div-3:{{isNumsSame}}</h4>
         </div>
     </div> -->
 
-    <div class="col-3">
-        <div *ngIf="(number1 == number2) as isNumsSame" class="bg-danger p-3 text-center">
-            <h4>Div-3</h4>
+    <!-- <div class="col-3"> -->
+        <!-- <div *ngIf="(number1 == number2) as isNumsSame" class="bg-danger p-3 text-center"> -->
+            <!-- <h4>Div-3</h4> -->
             <!-- <p>The condition isEqual: {{ isNumsSame }}</p> -->
-        </div>
-    </div>
+        <!-- </div> -->
+    <!-- </div> -->
     <!-- <div class="col-3">
         <div class="bg-danger p-3 text-center" *ngIf="isCheckedBox">
             <h4>Div-4</h4>
         </div>
     </div> -->
-    <div class="col-3">
+    <!-- <div class="col-3">
         <div class="bg-danger p-3 text-center" *ngIf="selectedState == 'Punjab'">
             <h4>Div-4</h4>
         </div>
-    </div>
-</div>
-<div class="row pt-3">
-    <div class="col-3 text-center">
+    </div> -->
+<!-- </div> -->
+<!-- <div class="row pt-3"> -->
+    <!-- <div class="col-3 text-center">
         <button class="btn btn-danger" (click)="showDiv1(false)">Hide</button>
         <button class="btn btn-primary mx-2" (click)="showDiv1(true)">Show</button>
     </div>
 
     <div class="col-3 text-center">
         <button class="btn btn-success" (click)="toggleDiv1()">Toggle</button>
-    </div>
+    </div> -->
 
     <!-- <div class="col-3 text-center">
         <div style="display: flex;align-items: center">
@@ -52,15 +52,15 @@
             <input class="form-control" type="text" [(ngModel)]="number2" placeholder="Num-2">
         </div>
     </div> -->
-    <div class="col-3 text-center">
+    <!-- <div class="col-3 text-center">
         <div style="display: flex; align-items: center">
             <input class="form-control" type="text" [(ngModel)]="number1" placeholder="Num-1">
             <input class="form-control" type="text" [(ngModel)]="number2" placeholder="Num-2">
         </div>
-    </div>
+    </div> -->
 
 
-    <div class="col-3 text-center">
+    <!-- <div class="col-3 text-center">
         <div style="display: flex;align-items: center">
             <input type="checkbox" class="width-50" [(ngModel)]="isCheckedBox">
             <select [(ngModel)]="selectedState">
@@ -71,12 +71,12 @@
             </select>
         </div>
         
-    </div>
-</div>
+    </div> -->
+<!-- </div> -->
 
-<div class="row">
+<!-- <div class="row"> -->
 
-    <div class="col-3">
+    <!-- <div class="col-3">
         <ul>
             <thead>
                 <tr>
@@ -85,22 +85,22 @@
             </thead>
             <li *ngFor="let city of cityArray">{{city}}</li>
         </ul>
-    </div>
+    </div> -->
 <!-- use of *ngFor in div element  -->
 
-    <div class="col-3">
+    <!-- <div class="col-3">
         <div *ngFor="let city of cityArray">{{city}}</div>
-    </div> 
+    </div>  -->
  <!-- use of *ngfor in dropdown -->
-    <div class="col-3">
+    <!-- <div class="col-3">
         <select>
             <option value="Select">Select</option>
             <option *ngFor="let city of cityArray">{{city}}</option>
         </select>
-    </div>
+    </div> -->
     <!-- use of *ngfor for display an object's key and value in table element -->
     
-</div>
+<!-- </div> -->
 <!-- Static value of thead is possible by creating the loop of an array of StudentKeys 
     which has been extracted calling the getStudentKeys() - As Object StudentObj has key and pair value 
     of each record and the key value is extracted and added to the 'Keys' a local variable and further converted
@@ -125,7 +125,7 @@
         </table>
     </div>
 </div> -->
-<div class="row">
+<!-- <div class="row">
     <div class="col-3">
         <table class="table table-borderd">
            <thead>
@@ -147,5 +147,81 @@
             
         </table>
     </div>
-</div>
+</div> -->
 
+<!-- <h4>
+    {{
+        isAdmin ? 'Welcome Admin': 
+        isMember ? 'Welcome Member':
+        isGuest ? 'Welcome Guest':
+        'Sorry not Allowed'
+        }}
+</h4> -->
+
+<!-- ng-template-outlet property
+ 
+
+<ng-template #message>
+    <button>Join Now</button>   
+</ng-template>
+ <div [ngTemplateOutlet]="message">
+    <h5>SideBar</h5>
+ </div>
+ <div [ngTemplateOutlet]="message">
+    <h5>Hero</h5>
+ </div>
+ <div  [ngTemplateOutlet]="message">
+    <h5>Footer</h5>
+ </div> -->
+
+ <!-- Use of an Array with string interpolation -->
+
+ <!-- <div class="row">
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let city of cityArray">
+                <td>{{city}}</td>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+ <div class="row">
+    <div class="col-3">
+        <ul >
+            @for (city of cityArray; track $index) {
+                <li>{{city+':'+$index+1}}</li>
+            }
+        </ul>
+    </div>
+ </div> -->
+
+ <!-- Fetch: Array Objects -->
+  <!-- <div class="row">
+    <div class="col-3">
+        <ul *ngFor="let user of userObj; let userCot=count">
+            <li>Total no. of Records {{userCot}}</li>
+            <li>{{user.id}}</li>
+            <li>{{user.name}}</li>
+            <li>{{user.email}}</li>
+            <li><button type="submit" (click)="deleteRecord(user)">Delete</button></li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <ul>
+            <ng-template>
+                <li>Total No. of Records in the Array :</li>
+            </ng-template>
+            
+            <li>Enter User Id<input type="text" [(ngModel)]="newUser.id" ></li>
+            <li>Enter User Name<input type="text" [(ngModel)]="newUser.name"></li>
+            <li>Enter user Email<input type="text" [(ngModel)]="newUser.email"></li>
+             <li><button type="submit" (click)="addNewUser()">AddNewUser</button></li>
+        </ul>
+    </div>
+  </div> -->
+<!-- style binding Vs ngStyle binding -->
+
+<h4 []>Style Binding</h4>
+
+
+<h4>NG Style Binding</h4>

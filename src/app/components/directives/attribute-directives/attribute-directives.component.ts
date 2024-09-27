@@ -14,9 +14,12 @@ export class AttributeDirectivesComponent {
 
 isDiv1Color:boolean=true;
 isDiv2Color:boolean=true;
+isLoggedIn:boolean=true;
+
 num1:string='';
 num2:string='';
 searchText:string='';
+
   changeDiv1Color(divColor:boolean):void
   {
     this.isDiv1Color=divColor;
